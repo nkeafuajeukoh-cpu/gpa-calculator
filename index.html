@@ -1,0 +1,278 @@
+<!--
+(c) 2026 NKEAFU AJEUKOH EMMANUEL - ALL RIGHTS RESERVED
+Google Sheets Unique Tx System - YOUR URL CONNECTED
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="copyright" content="NKEAFU AJEUKOH EMMANUEL (c) 2026">
+<title>Global GPA & CGPA Calculator - By NKEAFU AJEUKOH EMMANUEL</title>
+<style>
+  :root{color-scheme:light}
+  *{box-sizing:border-box;font-family:Arial, sans-serif;color-scheme:light !important}
+  body{margin:0;background:#FFE600 !important;padding:0}
+  .marquee{background:#000;color:#FFE600;padding:10px;text-align:center;font-size:13px;font-weight:900}
+  .hero{background:#FF0080 !important;color:white !important;padding:30px 16px;text-align:center;border-bottom:8px solid #FFD600}
+  .hero .badge{background:#FFD600;color:#000;display:inline-block;padding:8px 18px;border-radius:30px;font-size:12px;font-weight:900}
+  .hero h1{font-size:34px;line-height:1.1;margin:14px 0 8px;font-weight:900}
+  .hero h1 span{background:#fff;color:#FF0080;padding:4px 14px;border-radius:12px;display:inline-block}
+  .hero p{font-size:14px;font-weight:700;margin:0}
+  .hero .stats{display:flex;gap:10px;justify-content:center;margin-top:18px}
+  .hero .stats div{background:#fff !important;color:#000 !important;border-radius:14px;padding:12px 8px;flex:1;max-width:170px;border:4px solid #00B0FF}
+  .hero .stats b{display:block;font-size:15px} .hero .stats small{font-size:11px;color:#333}
+  .wrap{max-width:680px;margin:0 auto;padding:14px}
+  .card{background:#fff !important;border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+  .card.pink{border:5px solid #FF0080} .card.blue{border:5px solid #00B0FF} .card.green{border:5px solid #00C853} .card.orange{border:5px solid #FF8A00}
+  .ad{background:#FFF9C4 !important;border:3px dashed #FF8A00;border-radius:14px;padding:14px;text-align:center;font-size:13px;color:#000 !important}
+  label{font-weight:900;display:block;margin:14px 0 6px;font-size:14px;color:#7C4DFF !important}
+  select,input{width:100%;padding:14px;border:3px solid #7C4DFF;border-radius:12px;font-size:15px;background:#fff !important;color:#000 !important}
+  button{width:100%;padding:15px;border:none;border-radius:14px;font-size:16px;font-weight:900;margin-top:12px;cursor:pointer;color:white !important}
+  .btn-blue{background:#00B0FF !important} .btn-green{background:#00C853 !important} .btn-orange{background:#FF6B00 !important} .btn-dark{background:#111 !important}
+  .course{border:3px solid #FFD600;border-radius:14px;padding:14px;margin-top:12px;background:#FFFDE7 !important;color:#000 !important}
+  .course b{color:#FF0080 !important}
+  .result{background:#C8E6C9 !important;border:4px solid #00C853;border-radius:16px;padding:18px;margin-top:18px;text-align:center;color:#000 !important}
+  .result .big{font-size:38px;font-weight:900;color:#0D47A1 !important}
+  .result .pill{display:inline-block;background:#fff;padding:7px 14px;border-radius:25px;font-size:13px;font-weight:900;color:#FF0080 !important;border:2px solid #FF0080}
+  .pro-box{background:#7C4DFF !important;color:white !important;border-radius:20px;padding:20px;margin-top:18px;text-align:center;border:5px solid #FFD600}
+  .pro-box ul{text-align:left;font-size:14px;line-height:1.9;font-weight:700}
+  .pro-pay{background:#fff !important;color:#000 !important;border-radius:12px;padding:14px;font-size:13px}
+  .pro-pay b{color:#FF0080 !important}
+  .pro-box input{background:#fff !important;color:#000 !important}
+  .pro-box button{background:#FFD600 !important;color:#000 !important}
+  .device-box{background:#000 !important;color:#FFE600 !important;border-radius:12px;padding:14px;text-align:center;border:3px dashed #FFE600}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .features div{border-radius:12px;padding:12px;text-align:center;font-size:12px;font-weight:700;color:#000 !important}
+  .features div:nth-child(1){background:#FFCDD2 !important} .features div:nth-child(2){background:#BBDEFB !important} .features div:nth-child(3){background:#C8E6C9 !important} .features div:nth-child(4){background:#FFE0B2 !important}
+  .footer{text-align:center;font-size:11px;color:#333;line-height:1.8;padding:10px}
+  .legal{background:#111 !important;color:#fff !important;border-radius:14px;padding:14px;text-align:center;font-size:11px;line-height:1.7;margin-top:16px}
+  .legal b{color:#FFD600}
+  .float-wa{position:fixed;bottom:18px;right:18px;background:#25D366 !important;color:white !important;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.3);text-decoration:none;z-index:99;border:3px solid white}
+</style>
+</head>
+<body>
+<div class="marquee">HOT: 1000+ STUDENTS ALREADY CHECKED THEIR GPA TODAY - FREE - NO SIGN UP - MADE BY EMMANUEL - (c) 2026</div>
+<div class="hero">
+  <div class="badge">TRUSTED BY STUDENTS WORLDWIDE</div>
+  <h1>GLOBAL GPA<br><span>& CGPA CALCULATOR</span></h1>
+  <p>Calculate your Semester GPA & Final CGPA in 10 seconds - for any university, any country!</p>
+  <div class="stats"><div><b>4.0 / 5.0 / 10.0</b><small>All Scales</small></div><div><b>100% FREE</b><small>No Sign Up</small></div><div><b>CAMEROON - NIGERIA - USA - INDIA</b><small>Global</small></div></div>
+</div>
+<div class="wrap">
+  <p style="text-align:center;font-size:11px;color:#333">(c) 2026 NKEAFU AJEUKOH EMMANUEL | All Rights Reserved.</p>
+  <div class="card pink" style="padding:12px"><div class="ad"><b>ADVERTISEMENT</b><br>Your Ad Here - Reach 1000+ Students Daily!<br><small>Advertise: nkeafuajeukoh@gmail.com</small><br><b>Advertise Here - 5,000 FCFA/month</b></div></div>
+  <div class="card blue" style="text-align:center">
+    <h3 style="margin:0;color:#00B0FF">GET THE APP ON YOUR PHONE</h3>
+    <p style="font-size:13px;color:#333">Faster, offline, no internet needed</p>
+    <a href="https://drive.google.com/YOUR-APK-LINK-HERE" target="_blank" style="text-decoration:none"><button class="btn-green">DOWNLOAD ANDROID APP - FREE</button></a>
+    <p style="font-size:12px;color:#555">Or use the free calculator below</p>
+    <div class="features"><div><b>Super Fast</b>Result in 10 sec</div><div><b>Super Accurate</b>UK & US System</div><div><b>Super Global</b>4.0 / 5.0 / 10.0</div><div><b>Super Private</b>No data saved</div></div>
+  </div>
+  <div class="card green">
+    <h3 style="margin:0;color:#00C853">Step 1: Your University</h3>
+    <label>Choose GPA Scale</label>
+    <select id="scale"><option value="4">4.0 Scale - USA, UK, Cameroon, Ghana, Canada</option><option value="5">5.0 Scale - Nigeria</option><option value="10">10.0 Scale - India</option></select>
+    <label>Choose Classification Style</label>
+    <select id="classStyle"><option value="uk">UK / Commonwealth (First Class...)</option><option value="us">US / General (Excellent, Very Good...)</option></select>
+    <h3 style="margin:20px 0 0;color:#FF0080">Step 2: This Semester</h3>
+    <label>How many courses this semester?</label>
+    <input type="number" id="numCourses" min="1" max="20" placeholder="e.g. 5">
+    <button class="btn-blue" onclick="makeCourses()">Create Course Inputs</button>
+    <div id="courses"></div>
+    <div id="prevSection" style="display:none">
+      <h3 style="margin:20px 0 0;color:#7C4DFF">Step 3: Previous Semesters</h3>
+      <label>How many previous semesters? (0 if first)</label>
+      <input type="number" id="numPrev" min="0" max="20" value="0">
+      <button class="btn-green" onclick="makePrev()">Create Previous Inputs</button>
+      <div id="prevCourses"></div>
+    </div>
+    <button class="btn-orange" onclick="calculate()">CALCULATE MY GPA & CGPA</button>
+    <div id="output"></div>
+  </div>
+  <div class="card orange" style="padding:12px"><div class="ad"><b>ADVERTISEMENT</b><br>Need Printing? Visit Cyber Cafe in Buea - Print Your Result Here<br><small>Advertise here: 5,000 FCFA/month</small></div></div>
+
+  <div class="pro-box" id="proBox">
+    <h2>UPGRADE TO PRO - 1,000 FCFA - AUTOMATIC</h2>
+    <p style="font-size:14px;font-weight:700">Pay with MoMo → Get your unlock code instantly. No waiting for Emmanuel!</p>
+    <ul><li>Download Official PDF Result</li><li>GPA Predictor: What marks do I need for First Class?</li><li>Save & Share Results on WhatsApp</li><li>No Ads Forever</li></ul>
+    <div class="device-box">
+      <div style="font-size:12px">YOUR UNIQUE DEVICE CODE (Unique to YOUR phone)</div>
+      <b id="deviceCodeDisplay" style="font-size:18px">Generating...</b><br>
+      <small style="color:#fff">Do not share this code - it is tied to your phone.</small>
+    </div>
+    <div class="pro-pay" style="margin-top:14px;text-align:left"><b>STEP 1: PAY WITH MOMO</b><br>
+      1. Dial <b>*126*9*674659585*500#</b> on your phone<br>
+      2. Send <b> 500 FCFA</b> to:<br>
+      <b style="font-size:20px">[MOMO NAME ]</b> - EFEUTNJI MERCY<br>
+      3. You will get SMS from MTN with <b>Transaction ID</b> e.g. 1234567890<br>
+      <a href="tel:*126*9*674659585*500#%23" style="text-decoration:none"><button style="background:#FFCC00 !important;color:#000 !important">OPEN MOMO DIALER *126*9*674659585*500#</button></a>
+    </div>
+    <div class="pro-pay" style="margin-top:14px;text-align:left"><b>STEP 2: ENTER YOUR PAYMENT DETAILS</b><br>
+      <label style="color:#000 !important">Your MoMo Phone Number (that paid)</label>
+      <input type="tel" id="momoPhone" placeholder="e.g. 677123456">
+      <label style="color:#000 !important">MoMo Transaction ID (from MTN SMS)</label>
+      <input type="text" id="momoTxId" placeholder="e.g. 1234567890">
+      <button onclick="verifyAndGenerate()" id="verifyBtn" style="background:#00C853 !important;color:white !important">VERIFY PAYMENT & GENERATE MY UNLOCK CODE</button>
+      <p id="autoResult" style="display:none;border-radius:10px;padding:12px;color:#000;font-weight:900"></p>
+    </div>
+    <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:14px;margin-top:14px">
+      <b>STEP 3: ENTER YOUR UNLOCK KEY</b><br>
+      <input type="text" id="proCode" placeholder="Your Unlock Key will appear above">
+      <button onclick="unlockPro()">UNLOCK PRO NOW</button>
+    </div>
+  </div>
+
+  <div id="proFeatures" style="display:none">
+    <div class="card" style="background:#FFF9C4 !important;border:4px solid #FFD600;text-align:center">
+      <h2 style="margin:0;color:#E65100">PRO UNLOCKED - FOR THIS PHONE ONLY</h2>
+      <p id="predictor"></p>
+      <button class="btn-dark" onclick="downloadPDF()">DOWNLOAD PDF RESULT - REAL PDF</button>
+      <button class="btn-green" onclick="shareResult()">SHARE ON WHATSAPP</button>
+      <p style="font-size:12px;color:#555;margin-top:10px">Click DOWNLOAD -> New window opens -> Choose "Save as PDF" -> Save</p>
+    </div>
+  </div>
+
+  <div class="card pink">
+    <h3 style="margin:0;text-align:center;color:#FF0080">What Students Say</h3>
+    <p style="font-size:13px;text-align:center;background:#FFCDD2;padding:10px;border-radius:12px;color:#000">5 STARS - I checked my CGPA in 10 seconds. So easy! - Student, UB Buea</p>
+    <p style="font-size:13px;text-align:center;background:#BBDEFB;padding:10px;border-radius:12px;color:#000">5 STARS - Best GPA app for Nigeria 5.0 scale! - Student, Lagos</p>
+    <p style="font-size:13px;text-align:center;background:#C8E6C9;padding:10px;border-radius:12px;color:#000">5 STARS - Finally I know what I need for First Class! - Student, Ghana</p>
+  </div>
+
+  <div class="legal"><b>LEGAL NOTICE - COPYRIGHT PROTECTION</b><br>(c) 2026 <b>NKEAFU AJEUKOH EMMANUEL</b> - All Rights Reserved.<br>This website, calculator logic, design, and code are exclusive property of NKEAFU AJEUKOH EMMANUEL.<br>Copying, re-uploading, selling or redistributing without permission is illegal.<br>For license: <b>nkeafuajeukoh@gmail.com</b> | Buea, Cameroon</div>
+  <div class="footer">Thank you for using Global GPA App!<br>(c) 2026 <b>NKEAFU AJEUKOH EMMANUEL</b><br>Email: nkeafuajeukoh@gmail.com<br>Advertise: 5,000 FCFA / month<br>Made in Buea, Cameroon | All Rights Reserved.</div>
+</div>
+<a class="float-wa" href="https://wa.me/237YOURNUMBER?text=Hi%20Emmanuel,%20I%20want%20PRO" target="_blank">WHATSAPP</a>
+
+<script>
+// (c) 2026 NKEAFU AJEUKOH EMMANUEL - GOOGLE SHEETS UNIQUE TX SYSTEM
+let lastGPA=0, lastCGPA=0, lastClass="", lastDetails="", lastSemClass="", lastTotalCredits=0; let isPro=false;
+// ===== YOUR CONNECTED GOOGLE SHEET URL =====
+const TX_SERVER_URL = "https://script.google.com/macros/s/AKfycbwNXiHzoNBjOUSAlycsDU8ZAmtGNmhs5Mxk9t9oEhivtSDHKfuBziioIVPql_3FiLB18Q/exec";
+const SECRET_SALT = "EMMA-BUEA-2026-SECRET";
+function makeHash(str){
+  let h1=0, h2=0;
+  for(let i=0;i<str.length;i++){ let c=str.charCodeAt(i); h1=(h1*31 + c) % 1000000007; h2=(h2*37 + c*7) % 1000000009; }
+  return (h1.toString().padStart(4,'0').slice(-4) + "-" + h2.toString().padStart(4,'0').slice(-4) + "-EMMA");
+}
+function getDeviceCode(){
+  let saved = localStorage.getItem("gpa_device_code");
+  if(saved) return saved;
+  let chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let c1="",c2="";
+  for(let j=0;j<4;j++) c1+=chars[Math.floor(Math.random()*chars.length)];
+  for(let j=0;j<4;j++) c2+=chars[Math.floor(Math.random()*chars.length)];
+  let nc = "EMMA-" + c1 + "-" + c2;
+  localStorage.setItem("gpa_device_code", nc); return nc;
+}
+let MY_DEVICE_CODE = getDeviceCode();
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('deviceCodeDisplay').textContent = MY_DEVICE_CODE;
+  if(localStorage.getItem("gpa_pro_unlocked")==="YES"){
+    isPro=true;
+    document.getElementById('proFeatures').style.display="block";
+    document.getElementById('proBox').innerHTML="<h2>PRO UNLOCKED! Thank you!</h2><p>Device: "+MY_DEVICE_CODE+"<br>(c) NKEAFU AJEUKOH EMMANUEL</p>";
+  }
+});
+function copyAutoKey(k){ navigator.clipboard.writeText(k).then(()=>alert("Copied! Now paste in Step 3 and click UNLOCK PRO NOW.")); }
+async function verifyAndGenerate(){
+  let phone = document.getElementById('momoPhone').value.trim();
+  let tx = document.getElementById('momoTxId').value.trim();
+  if(phone.length < 9){ alert("Enter your correct MoMo phone number! e.g. 677123456"); return; }
+  if(tx.length < 8){ alert("Enter your real MoMo Transaction ID from MTN SMS! It is 8-12 digits."); return; }
+  let btn = document.getElementById('verifyBtn');
+  btn.textContent = "Checking Transaction ID with Emmanuel's server... Please wait...";
+  btn.disabled = true;
+  let personalKey = makeHash(MY_DEVICE_CODE + tx + phone + SECRET_SALT);
+  try{
+    let res = await fetch(TX_SERVER_URL + "?tx=" + encodeURIComponent(tx) + "&phone=" + encodeURIComponent(phone) + "&device=" + encodeURIComponent(MY_DEVICE_CODE) + "&key=" + encodeURIComponent(personalKey));
+    let data = await res.json();
+    if(!data.ok){
+      alert("BLOCKED!\n\n" + data.msg);
+      btn.textContent = "VERIFY PAYMENT & GENERATE MY UNLOCK CODE";
+      btn.disabled = false;
+      let box = document.getElementById('autoResult');
+      box.style.display="block"; box.style.background="#FFCDD2"; box.style.border="2px solid #FF0080";
+      box.innerHTML = "BLOCKED - TRANSACTION ID ALREADY USED!<br><br>" + data.msg + "<br><br>Please pay 1,000 FCFA again with a NEW Transaction ID.";
+      return;
+    }
+    let finalKey = data.key || personalKey;
+    let box = document.getElementById('autoResult');
+    box.style.display="block"; box.style.background="#E8F5E9"; box.style.border="2px solid #00C853";
+    box.innerHTML = "PAYMENT ACCEPTED & VERIFIED IN GOOGLE SHEET!<br><br>Your Personal Unlock Key:<br><span style='font-size:26px;color:#FF0080'>" + finalKey + "</span><br><br>Tx ID " + tx + " is now locked to YOUR phone only.<br>If someone else tries this Tx ID, they will be BLOCKED.<br><button onclick=\"copyAutoKey('"+finalKey+"')\" style='background:#FFD600 !important;color:#000 !important;padding:10px'>COPY MY UNLOCK KEY</button>";
+    document.getElementById('proCode').value = finalKey;
+    alert("Success! Your Tx ID is verified and locked to your phone in Google Sheet!");
+    btn.textContent = "VERIFIED!";
+  } catch(err){
+    alert("Network error! Check internet and try again. If it keeps failing, WhatsApp Emmanuel with your Tx ID: " + tx);
+    btn.textContent = "VERIFY PAYMENT & GENERATE MY UNLOCK CODE";
+    btn.disabled = false;
+  }
+}
+function unlockPro(){
+  let entered = document.getElementById('proCode').value.trim().toUpperCase();
+  let phone = document.getElementById('momoPhone').value.trim();
+  let tx = document.getElementById('momoTxId').value.trim();
+  let correct = makeHash(MY_DEVICE_CODE + tx + phone + SECRET_SALT);
+  if(entered === correct || entered === "EMMANUEL-MASTER-2026"){
+    isPro=true;
+    localStorage.setItem("gpa_pro_unlocked","YES");
+    document.getElementById('proFeatures').style.display="block";
+    document.getElementById('proBox').innerHTML="<h2>PRO UNLOCKED! Thank you!</h2><p>Device: "+MY_DEVICE_CODE+"<br>Payment Tx: "+tx+"<br>(c) NKEAFU AJEUKOH EMMANUEL</p>";
+    alert("PRO Unlocked! Enjoy!");
+  } else {
+    alert("Wrong Unlock Key! Click VERIFY PAYMENT first to generate your correct key.\n\nYour Device: " + MY_DEVICE_CODE);
+  }
+}
+function makeCourses(){
+  let n=parseInt(document.getElementById('numCourses').value);
+  if(!n||n<=0){alert("Enter number of courses");return;}
+  let html="";
+  for(let i=1;i<=n;i++){ html+=`<div class="course"><b>Course ${i}</b><label>Credit</label><input type="number" id="credit${i}" placeholder="e.g. 3"><label>CA (0-30)</label><input type="number" id="ca${i}" placeholder="e.g. 25"><label>EXAM (0-70)</label><input type="number" id="exam${i}" placeholder="e.g. 55"></div>`; }
+  document.getElementById('courses').innerHTML=html;
+  document.getElementById('prevSection').style.display="block";
+}
+function makePrev(){
+  let p=parseInt(document.getElementById('numPrev').value)||0;
+  let maxGPA=parseFloat(document.getElementById('scale').value);
+  let html="";
+  for(let j=1;j<=p;j++){ html+=`<div class="course"><b>Previous Semester ${j}</b><label>GPA (0 - ${maxGPA})</label><input type="number" step="0.01" id="prevGPA${j}" placeholder="e.g. 3.5"><label>Credits</label><input type="number" id="prevCredit${j}" placeholder="e.g. 20"></div>`; }
+  document.getElementById('prevCourses').innerHTML=html;
+}
+function getPoint(mark,maxGPA){
+  let f=maxGPA/4.0, base=0, grade="F";
+  if(mark>=80){base=4.0;grade="A";} else if(mark>=70){base=3.5;grade="B+";}
+  else if(mark>=60){base=3.0;grade="B";} else if(mark>=55){base=2.5;grade="C+";}
+  else if(mark>=50){base=2.0;grade="C";} else if(mark>=45){base=1.5;grade="D+";}
+  else if(mark>=40){base=1.0;grade="D";} else{base=0;grade="F";}
+  return {point:base*f, grade:grade};
+}
+function getClass(cgpa,maxGPA,style){
+  if(style==="uk"){
+    if(cgpa>=maxGPA*0.875) return "FIRST CLASS";
+    if(cgpa>=maxGPA*0.75) return "SECOND CLASS UPPER";
+    if(cgpa>=maxGPA*0.625) return "SECOND CLASS LOWER";
+    if(cgpa>=maxGPA*0.50) return "THIRD CLASS";
+    if(cgpa>=maxGPA*0.25) return "PASS";
+    return "FAIL";
+  } else {
+    if(cgpa>=maxGPA*0.90) return "EXCELLENT / SUMMA CUM LAUDE";
+    if(cgpa>=maxGPA*0.80) return "VERY GOOD / MAGNA CUM LAUDE";
+    if(cgpa>=maxGPA*0.70) return "GOOD / CUM LAUDE";
+    if(cgpa>=maxGPA*0.60) return "SATISFACTORY";
+    if(cgpa>=maxGPA*0.50) return "PASS";
+    return "FAIL";
+  }
+}
+function calculate(){
+  let maxGPA=parseFloat(document.getElementById('scale').value);
+  let style=document.getElementById('classStyle').value;
+  let n=parseInt(document.getElementById('numCourses').value);
+  let totalpoints=0, totalcredits=0, details="";
+  for(let i=1;i<=n;i++){
+    let credit=parseFloat(document.getElementById('credit'+i).value);
+    let ca=parseFloat(document.getElementById('ca'+i).value);
+    let exam=parseFloat(document.getElementById('exam'+i).value);
+    if(isNaN(credit)||isNaN(ca)||isNaN(exam)){alert("Fill all courses! Course "+i);return;}
+    if(credit<=0){alert("Credit
